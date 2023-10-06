@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class MyAlert extends StatefulWidget {
   const MyAlert({super.key});
@@ -86,6 +87,54 @@ class _MyAlertState extends State<MyAlert> {
             ),
             label: Text('Calendar'), // <-- Text
           ),
+          ElevatedButton.icon(
+            onPressed: () {
+              Navigator.pushNamed(context, 'mediaQueries');
+            },
+            icon: const Icon( // <-- Icon
+              Icons.mediation,
+              size: 24.0,
+            ),
+            label: const Text('MediaQuery'), // <-- Text
+          ),
+          ElevatedButton.icon(
+            onPressed: () {
+              Navigator.pushNamed(context, 'circleAvatar');
+            },
+            icon: const Icon( // <-- Icon
+              Icons.account_circle_outlined,
+              size: 24.0,
+            ),
+            label: const Text('Circle Avatar'), // <-- Text
+          ),
+          ElevatedButton.icon(
+            onPressed: () {
+              Navigator.pushNamed(context, 'customAlert');
+            },
+            icon: const Icon( // <-- Icon
+              Icons.warning_amber,
+              size: 24.0,
+            ),
+            label: const Text('Alert'), // <-- Text
+          ),
+          ElevatedButton.icon(
+            onPressed: () {
+               Fluttertoast.showToast(
+                msg: "This is a toast message",
+                toastLength: Toast.LENGTH_SHORT, // Length of time the toast should be visible
+                gravity: ToastGravity.BOTTOM,    // Toast gravity (position on the screen)
+                timeInSecForIosWeb: 1,          // Time in seconds for iOS/web
+                backgroundColor: Colors.grey,    // Background color of the toast
+                textColor: Colors.white, // Text color of the toast message
+                fontSize: 16.0,                 // Font size of the toast message
+              );
+            },
+            icon: const Icon( // <-- Icon
+              Icons.touch_app,
+              size: 24.0,
+            ),
+            label: const Text('Toast'), // <-- Text
+          ),
           CircleAvatar(
             backgroundColor: Colors.blue,
             child: IconButton(
@@ -96,6 +145,7 @@ class _MyAlertState extends State<MyAlert> {
               icon: Icon(Icons.navigate_next),
             ),
           ),
+
       ],
     ),),);
   }

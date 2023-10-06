@@ -13,7 +13,7 @@ class MyImageSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Image Slider Example'),
+        title: const Text('Image Slider Example'),
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(0,40,0,0,),
@@ -28,8 +28,8 @@ class MyImageSlider extends StatelessWidget {
               builder: (BuildContext context) {
                 return Container(
                   width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.symmetric(horizontal: 5.0),
-                  decoration: BoxDecoration(
+                  margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                  decoration: const BoxDecoration(
                     color: Colors.grey,
                   ),
                   child: Image.network(
